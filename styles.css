@@ -1,4 +1,3 @@
-/* Réinitialisation de certains styles par défaut pour avoir un rendu plus uniforme */
 * {
     margin: 0;
     padding: 0;
@@ -7,10 +6,10 @@
 
 body, html {
     height: 100%;
-    font-family: 'Arial', sans-serif; /* Police plus moderne */
-    background-color: #f4f4f4; /* Couleur de fond plus douce */
-    color: #333; /* Couleur de texte principale */
-    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Couleur initiale */
+    color: #000000; /* Couleur de texte initiale blanche pour contraster avec le fond noir ultérieur */
+    transition: background-color 0.5s, color 0.5s; /* Transition pour le fond et la couleur du texte */
 }
 
 .container {
@@ -21,59 +20,37 @@ body, html {
     height: 100%;
     padding: 20px;
     text-align: center;
-    gap: 20px;
 }
 
-h1,h2 {
+.warning-title {
+    color: #fff; /* Initialement blanc, sera changé en rouge */
     margin-bottom: 20px;
-    color: #5a5a5a; /* Couleur de titre */
+    font-size: 24px;
+    transition: color 0.5s; /* Transition pour la couleur du titre */
 }
 
 button {
-    background-color: #4CAF50; /* Couleur de fond du bouton */
-    color: white; /* Texte blanc pour le bouton */
+    background-color: #4CAF50;
+    color: #000000;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px; /* Bords arrondis pour le bouton */
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #45a049; /* Changement de couleur au survol */
+    background-color: #45a049;
 }
 
-p {
+p, h2 {
     margin-top: 20px;
     padding: 10px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère pour les paragraphes */
+    background-color: #444; /* Fond légèrement plus clair pour les blocs d'information */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 600px; /* Largeur maximale pour la lisibilité */
-}
-
-button {
-    background-color: #4CAF50; /* Couleur de fond du bouton */
-    color: white; /* Texte blanc pour le bouton */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px; /* Bords arrondis pour le bouton */
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049; /* Changement de couleur au survol */
-}
-
-p {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère pour les paragraphes */
-    width: 100%;
-    max-width: 600px; /* Largeur maximale pour la lisibilité */
-    border-radius: 8px; /* Bords arrondis pour les paragraphes */
+    max-width: 600px;
+    border-radius: 8px;
+    color: #fff; /* Assurez-vous que le texte reste blanc pour la lisibilité */
 }

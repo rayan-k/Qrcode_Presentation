@@ -1,13 +1,25 @@
+function showInfo() {
+    document.body.style.backgroundColor = "#000"; // Change le fond en noir
+    document.body.style.color = "#000"; // Change la couleur du texte en noir pour les autres éléments
+    const alertTitle = document.getElementById('alert-title');
+    alertTitle.textContent = "Vous avez été piraté!";
+    alertTitle.style.color = "red"; // Change la couleur du titre d'alerte en rouge
+
+    getLocation();
+    getDeviceInfo();
+}
+
+
 function getLocation() {
     if (navigator.geolocation) {
         const options = {
-            enableHighAccuracy: true, // Utilise le GPS pour une meilleure précision
-            timeout: 10000,           // Temps maximum pour obtenir la localisation
-            maximumAge: 0             // Ne pas accepter une localisation mise en cache
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
         };
         navigator.geolocation.getCurrentPosition(showPosition, showError, options);
     } else {
-        document.getElementById('location').innerHTML = "La géolocalisation n'est pas supportée par ce navigateur.";
+        document.getElementById('location').textContent = "La géolocalisation n'est pas supportée par ce navigateur.";
     }
 }
 
@@ -23,7 +35,7 @@ function getAddress(latitude, longitude) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            document.getElementById('location').innerHTML += `<br>Adresse la plus proche: ${data.display_name}`;
+            document.getElementById('location').innerHTML += `<br>Adresse: ${data.display_name}`;
         })
         .catch(error => {
             console.error('Erreur lors de la récupération de l’adresse:', error);
@@ -36,25 +48,10 @@ function getDeviceInfo() {
     const result = parser.getResult();
     const details = `Navigateur utilisé: ${result.browser.name} ${result.browser.version}, ` +
                     `Système d'exploitation: ${result.os.name} ${result.os.version}`;
-    document.getElementById('device-info').innerHTML = `Informations détaillées: ${details}`;
+    document.getElementById('device-info').textContent = details;
 }
 
 function showError(error) {
-    let message;
-    switch (error.code) {
-        case error.PERMISSION_DENIED:
-            message = "L'utilisateur a refusé la demande de géolocalisation.";
-            break;
-        case error.POSITION_UNAVAILABLE:
-            message = "Les informations de localisation ne sont pas disponibles.";
-            break;
-        case error.TIMEOUT:
-            message = "La demande d'accès à la localisation a expiré.";
-            break;
-        default:
-            message = "Une erreur inconnue s'est produite.";
-    }
-    document.getElementById('location').innerHTML = message;
+    let message = "Une erreur est survenue lors de la récupération de votre position.";
+    document.getElementById('location').textContent = message;
 }
-
-window.onload = getDeviceInfo;

@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Scanner pour la Géolocalisation et Infos Appareil</h1>
-        <button onclick="getLocation()">Obtenir Ma Géolocalisation Réseau la plus proche</button>
-        <p id="location">Appuyez sur le bouton pour voir votre position et adresse.</p>
+        <h1 id="alert-title">Cliquez pour voir vos informations exposées</h1>
+        <button onclick="showInfo()">Afficher les Informations</button>
+        <h2>Localisation</h2>
+        <p id="location">Votre position sera affichée ici...</p>
         <h2>Informations de l'Appareil</h2>
-        <p id="device-info">Informations seront affichées ici...</p>
+        <p id="device-info">Détails de l'appareil seront affichés ici...</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/1.0.2/ua-parser.min.js"></script>
     <script src="script.js"></script>
