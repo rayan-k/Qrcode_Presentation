@@ -1,20 +1,79 @@
+/* Réinitialisation de certains styles par défaut pour avoir un rendu plus uniforme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Police plus moderne */
+    background-color: #f4f4f4; /* Couleur de fond plus douce */
+    color: #333; /* Couleur de texte principale */
+    padding: 20px 0;
 }
 
 .container {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
     text-align: center;
+    gap: 20px;
+}
+
+h1,h2 {
+    margin-bottom: 20px;
+    color: #5a5a5a; /* Couleur de titre */
 }
 
 button {
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Texte blanc pour le bouton */
+    border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 5px; /* Bords arrondis pour le bouton */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Changement de couleur au survol */
+}
+
+p {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère pour les paragraphes */
+    width: 100%;
+    max-width: 600px; /* Largeur maximale pour la lisibilité */
+}
+
+button {
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Texte blanc pour le bouton */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px; /* Bords arrondis pour le bouton */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Changement de couleur au survol */
+}
+
+p {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère pour les paragraphes */
+    width: 100%;
+    max-width: 600px; /* Largeur maximale pour la lisibilité */
+    border-radius: 8px; /* Bords arrondis pour les paragraphes */
 }
