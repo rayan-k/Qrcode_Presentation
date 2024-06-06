@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Géolocalisation et Infos Appareil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scanner pour la Géolocalisation et Infos Appareil</h1>
+        <button onclick="getLocation()">Obtenir Ma Géolocalisation</button>
+        <p id="location">Appuyez sur le bouton pour voir votre position et adresse.</p>
+        <h2>Informations de l'Appareil</h2>
+        <p id="device-info"></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/1.0.2/ua-parser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
